@@ -81,7 +81,7 @@ def read_qualisys_tsv(filepath, skip_rows=11):
 
 def load_directory(directory, pattern='*.csv', subject_trial_pattern=r'subject(\d+)_trial(\d+)',
                    reader_func=None, **reader_kwargs):
-    """
+    r"""
     Load all files matching pattern from directory.
     
     Parameters
@@ -171,7 +171,7 @@ def load_directory(directory, pattern='*.csv', subject_trial_pattern=r'subject(\
 
 
 def parse_subject_info_from_filename(filename, pattern=r'S(\d+)_H(\d+)_([MF])'):
-    """
+    r"""
     Parse subject information from filename.
     
     Parameters
