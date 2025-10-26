@@ -1,29 +1,19 @@
 # PyPMAnalyzer
 
-Python implementation of Principal Movement Analysis (PMA) for motion capture data, based on the PMAnalyser by Federolf.
+Python implementation under development of Principal Movement Analysis (PMA) for motion capture data, based on the [PMAnalyser](https://www.uibk.ac.at/de/isw/forschung/neurophysiology-of-exercise/pm_analyzer/) by Peter Federolf and colleagues.
 
 ## Overview
 
 PyPMAnalyzer provides tools for analyzing motion capture data using Principal Component Analysis (PCA) to identify and visualize principal movements (PMs) in human motion.
 
-## Features
-
-- ✅ Principal Movement Analysis (PMA) using PCA
-- ✅ Motion reconstruction from principal components
-- ✅ 2D animation visualization (sagittal and frontal views)
-- ✅ Side-by-side comparison of multiple PMs
-- ✅ Support for Qualisys marker sets
-- ✅ Flexible styling options (colored or monochrome)
-- ✅ Video export (MP4, GIF)
-
 ## Installation
 
-### For Lab Members
+### For CMD Lab Members
 
 ```bash
-# Install CMD_Loaders (lab package)
+# Install cmd-loaders (lab package)
 git clone git@github.com:CMD-Lab/CMD_Loaders.git
-pip install -e CMD_Loaders
+pip install -e cmd-loaders
 
 # Install PyPMAnalyzer
 git clone git@github.com:yourusername/PyPMAnalyzer.git
@@ -38,7 +28,7 @@ cd PyPMAnalyzer
 pip install -e .
 ```
 
-**Note**: Some features require the CMD_Loaders package for data loading. Contact the lab for access.
+**Note**: Some features require the cmd-loaders package for data loading. Contact the lab for access.
 
 ## Quick Start
 
@@ -132,34 +122,12 @@ animator.animate(
     show_sagittal=True,
     show_frontal=True,
     show_bones=True,
-    style='black',  # monochrome style
+    style='black',  
     bone_width=3.0,
     marker_size=8,
     fps=30
 )
 ```
-
-## Project Structure
-
-```
-pypmanalyzer/
-├── ppma_core.py              # Core PMA algorithms
-├── ppma_pipeline.py          # Analysis pipeline
-├── visualize.py              # High-level visualization API
-└── animation/                # Animation subpackage
-    ├── animator_2d.py        # 2D animations
-    ├── animator_comparison.py # Multi-PM comparisons
-    ├── reconstruction.py     # PM reconstruction
-    ├── marker_sets.py        # Skeleton definitions
-    ├── styles.py             # Visual styles
-    └── utils.py              # Utilities
-```
-
-## Documentation
-
-For detailed documentation, see:
-- [Structure Guide](STRUCTURE_GUIDE.md) - Architecture and extension guide
-- [Setup Instructions](SETUP_INSTRUCTIONS.md) - Installation and configuration
 
 ## Requirements
 
@@ -168,33 +136,4 @@ For detailed documentation, see:
 - Matplotlib >= 3.3.0
 - SciPy >= 1.6.0
 
-## Contributing
 
-This project is part of the Computational Movement Disorders Lab. For contributions or questions, please contact the lab.
-
-## Citation
-
-If you use PyPMAnalyzer in your research, please cite:
-
-```
-[Your citation information here]
-```
-
-Based on PMAnalyser by Federolf et al.
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Contact
-
-- **Author**: Your Name
-- **Email**: your.email@example.com
-- **Lab**: Computational Movement Disorders Lab
-- **Institution**: Your Institution
-
-## Acknowledgments
-
-- Based on PMAnalyser by Peter Federolf
-- Developed at the Computational Movement Disorders Lab
-- Thanks to all lab members for feedback and testing
