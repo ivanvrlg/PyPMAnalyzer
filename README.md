@@ -1,6 +1,6 @@
 # PyPMAnalyzer
 
-Python implementation under development of Principal Movement Analysis (PMA) for motion capture data, based on the [PMAnalyser](https://www.uibk.ac.at/de/isw/forschung/neurophysiology-of-exercise/pm_analyzer/) by Peter Federolf and colleagues.
+Python implementation under development of Principal Movement Analysis (PMA) for motion capture data, based on the [PMAnalyzer](https://www.uibk.ac.at/de/isw/forschung/neurophysiology-of-exercise/pm_analyzer/) by Peter Federolf and colleagues.
 
 ## Overview
 
