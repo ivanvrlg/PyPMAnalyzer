@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypmanalyzer"
+version = "0.1.0"
+description = "Python implementation of Principal Movement Analysis for motion capture data"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["motion-capture", "biomechanics", "PCA", "principal-movement-analysis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "numpy>=1.20.0",
+    "matplotlib>=3.3.0",
+    "scipy>=1.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+docs = [
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+notebooks = [
+    "jupyter>=1.0.0",
+    "ipywidgets>=7.6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ivanvrlg/PyPMAnalyzer"
+Documentation = "https://github.com/ivanvrlg/PyPMAnalyzer#readme"
+Repository = "https://github.com/ivanvrlg/PyPMAnalyzer"
+Issues = "https://github.com/ivanvrlg/PyPMAnalyzer/issues"
+
+[tool.setuptools]
+packages = ["pypmanalyzer", "pypmanalyzer.animation"]
+
+[tool.setuptools.package-dir]
+pypmanalyzer = "."
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=pypmanalyzer --cov-report=html --cov-report=term"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
