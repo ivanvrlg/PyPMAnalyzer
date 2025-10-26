@@ -55,10 +55,9 @@ Documentation = "https://github.com/ivanvrlg/PyPMAnalyzer#readme"
 Repository = "https://github.com/ivanvrlg/PyPMAnalyzer"
 Issues = "https://github.com/ivanvrlg/PyPMAnalyzer/issues"
 
-[tool.setuptools]
-[tool.setuptools]
-py-modules = ["ppma_core", "ppma_pipeline", "ppma_marker_setup_helper", "visualize"]
-packages = ["animation"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pypmanalyzer*"]
 
 [tool.setuptools.package-dir]
 pypmanalyzer = "."
