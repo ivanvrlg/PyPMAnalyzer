@@ -258,7 +258,9 @@ def run_pm_analysis_pipeline(
     normalize_method: str = 'height',
     filter_cutoff: float = 7.0,
     n_components: int = 12,
-    fs: float = 100.0
+    fs: float = 100.0,
+    trim_start: float = 0.0,        
+    trim_end: float = None          
 ):
     """
     Complete PM analysis pipeline
@@ -287,6 +289,18 @@ def run_pm_analysis_pipeline(
     print("\n### STEP 1: LOADING DATA ###\n")
     
     data_dict = load_multiple_trials(session_path, trial_names, subject_ids)
+    
+    # TRIM DATA
+    if trim_start > 0 or trim_end is not None:
+        print(f"\nTrimming data: start={trim_start}s, end={trim_end}s")
+        data_dict_trimmed = {}
+        for key, data in data_dict.items():
+            start_frame = int(trim_start * fs)
+            end_frame = int(trim_end * fs) if trim_end else data.shape[0]
+            data_dict_trimmed[key] = data[start_frame:end_frame]
+            print(f"  {key}: {data.shape[0]} → {data_dict_trimmed[key].shape[0]} frames")
+        data_dict = data_dict_trimmed
+    
     trial_keys = list(data_dict.keys())
     
     # Create subject info if not provided
