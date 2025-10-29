@@ -1,0 +1,38 @@
+# Example YAML configuration file for loading multiple trials from different directories
+# This makes it easy to load walking recordings from different subjects/sessions
+
+trials:
+  # Subject 1 - Walking trial from session 1
+  - session_path: /data/subject01/session1
+    trial_name: Walk_01
+    subject_id: S01
+
+  # Subject 2 - Walking trial from session 1
+  - session_path: /data/subject02/session1
+    trial_name: Walk_01
+    subject_id: S02
+
+  # Subject 3 - Walking trial from session 2 (different session name)
+  - session_path: /data/subject03/session2
+    trial_name: Walk_02
+    subject_id: S03
+
+  # Subject 4 - Walking trial from completely different location
+  - session_path: /research/gait_analysis/subject04/baseline
+    trial_name: Walk_01
+    subject_id: S04
+
+  # Subject 5 - Another subject from different directory
+  - session_path: /research/gait_analysis/subject05/baseline
+    trial_name: Walk_01
+    subject_id: S05
+
+# You can also specify relative paths
+#  - session_path: ../data/subject06/session1
+#    trial_name: Walk_01
+#    subject_id: S06
+
+# Notes:
+# - session_path: The directory containing the trial data files
+# - trial_name: The name of the specific trial to load
+# - subject_id: Optional identifier for the subject (auto-generated if omitted)

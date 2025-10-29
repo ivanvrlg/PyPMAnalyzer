@@ -60,6 +60,28 @@ visualize_principal_movements(
 )
 ```
 
+## Features
+
+### Multi-Directory Trial Loading (New!)
+
+Easily load trials from different directories - perfect for multi-subject studies:
+
+```python
+from ppma_pipeline import load_trials_from_config, run_pm_analysis_pipeline
+
+# Load 5 walking trials from different subjects/directories using a config file
+data_dict = load_trials_from_config("trials_config.yaml")
+
+# Run complete analysis pipeline
+results = run_pm_analysis_pipeline(
+    data_dict=data_dict,
+    n_components=12,
+    fs=100.0
+)
+```
+
+See [`examples/README.md`](examples/README.md) for detailed documentation and multiple loading methods.
+
 ## Usage Examples
 
 ### Load and Visualize Motion Data
