@@ -1,0 +1,29 @@
+{
+  "trials": [
+    {
+      "session_path": "/data/subject01/session1",
+      "trial_name": "Walk_01",
+      "subject_id": "S01"
+    },
+    {
+      "session_path": "/data/subject02/session1",
+      "trial_name": "Walk_01",
+      "subject_id": "S02"
+    },
+    {
+      "session_path": "/data/subject03/session2",
+      "trial_name": "Walk_02",
+      "subject_id": "S03"
+    },
+    {
+      "session_path": "/research/gait_analysis/subject04/baseline",
+      "trial_name": "Walk_01",
+      "subject_id": "S04"
+    },
+    {
+      "session_path": "/research/gait_analysis/subject05/baseline",
+      "trial_name": "Walk_01",
+      "subject_id": "S05"
+    }
+  ]
+}
